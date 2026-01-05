@@ -1,0 +1,103 @@
+h2{
+    color: #6d5dfc;
+}
+
+.contact-section {
+  background: #ffffff; /* Dark background from your image */
+  color: white;
+  padding: 80px 8%;
+  min-height: 100vh;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.section-title span {
+  color: #6d5dfc;
+}
+
+/* Contact Info Styling */
+.contact-info {
+  margin-bottom: 40px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.info-item i {
+  color: #6d5dfc; /* Your specific color for icons */
+  font-size: 1.2rem;
+}
+
+.info-item p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Buttons */
+.resume-btn, .submit-btn {
+  background-color: #6d5dfc;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.resume-btn {
+  margin-top: 15px;
+}
+
+.resume-btn:hover, .submit-btn:hover {
+  background-color: #5b4ceb;
+  transform: translateY(-2px);
+}
+
+/* Form Styling */
+.contact-form {
+  max-width: 800px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input, 
+.input-group textarea {
+  width: 100%;
+  padding: 15px;
+  background-color: #494f58; /* Slightly lighter than background */
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+  border-color: #6d5dfc;
+}
+
+.submit-btn {
+  width: auto;
+  min-width: 150px;
+}
+
+/* Dark Mode Overrides */
+:host-context(.dark-theme) .contact-section {
+  background: #1e293b;
+}
+
+:host-context(.dark-theme) .info-item i, :host-context(.dark-theme) .info-item p {
+  color: #cbd5e1;
+}

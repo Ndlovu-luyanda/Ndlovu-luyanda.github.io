@@ -1,0 +1,169 @@
+/* Title Styling */
+.latest-projects-title {
+  margin-bottom: 3px;
+  font-size: 30px;
+  font-weight: 800; /* Thick Black */
+  color: #000000;
+  text-align: left;
+  text-transform: uppercase;
+}
+.latest-projects-title span {
+  color: #6d5dfc; /* Thick Purple */
+}
+
+
+/* Grid: 2 Elements per Column */
+.portfolio-grid {
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 0 5%;
+}
+
+:host {
+    display: block;
+    overflow: hidden; /* This prevents margins from 'leaking' out */
+}
+ 
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 8%;
+}
+
+/* Flipcard Button Reset */
+.flipcard__item {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 90%;
+  height: 400px;
+  cursor: pointer;
+  perspective: 1000px;
+  position: relative;
+  display: block;
+}
+
+.flipcard__item-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Front Side */
+.flipcard__item-front {
+   /* Matches your dark theme background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.flipcard__item-frontImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  border-radius: 10px;
+}
+
+/* Hover Purple/Blue Overlay */
+/* Update your existing .purple-overlay with this */
+.purple-overlay {
+  position: absolute;
+  inset: 0;
+  /* Vertical gradient: transparent top to solid purple bottom */
+  background: linear-gradient(
+    to bottom,
+    rgba(109, 93, 252, 0) 0%, 
+    rgba(109, 93, 252, 0.95) 80%
+  );
+  
+  display: flex;
+  align-items: flex-end; /* Push text to the bottom like the reference */
+  justify-content: center;
+  padding-bottom: 30px; /* Space for the "Click to flip" text */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  font-weight: bold;
+  pointer-events: none; /* Ensures the button click still works */
+}
+
+.flipcard__item:hover .purple-overlay {
+  opacity: 1;
+}
+
+
+
+/* Back Side - White Background */
+.flipcard__item-back {
+  background: linear-gradient(
+    to bottom,
+    rgba(109, 93, 252, 0) 0%, 
+    rgba(109, 93, 252, 0.95) 80%
+  );
+  color: #1a1a1a;
+  transform: rotateY(180deg);
+  padding: 25px; /* Slightly reduced padding to give text more room */
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.flipcard__item-back-inner {
+  position: relative; 
+}
+
+.flipcard__item-back-inner p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  flex-grow: 1; /* Pushes the 'View Case Study' link to the bottom */
+}
+
+
+/* Flip Trigger */
+.flipcard__item.is-flipped .flipcard__item-front {
+  transform: rotateY(180deg);
+}
+
+.flipcard__item.is-flipped .flipcard__item-back {
+  transform: rotateY(360deg);
+}
+
+
+
+.flipcard__item-back-title {
+  color: #6d5dfc;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.see-more-link {
+margin-top: auto; /* Sticks link to the bottom of the card */
+  padding-top: 15px;
+  flex-shrink: 0;
+}
+
+.back-content h3 { color: #6d5dfc; margin-bottom: 15px; }
+.see-more { display: flex; align-items: center; gap: 10px; color: #6d5dfc; text-decoration: none; font-weight: bold; }
+
+/* Dark Mode Overrides */
+:host-context(.dark-theme) .portfolio-section {
+  background: #1e293b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+:host-context(.dark-theme) .latest-projects-title {
+  color:#ffffff;
+}
+

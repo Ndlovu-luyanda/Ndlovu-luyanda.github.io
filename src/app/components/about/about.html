@@ -1,0 +1,61 @@
+<section id="about" class="about-section" appReveal>
+  <div class="about-container">
+    
+    <div class="about-content">
+      <h2 class="section-title">About Me<span>.</span></h2>
+      <p class="description">
+        Hi, I'm <strong>Luyanda Ndlovu</strong>. With 6 months of experience in <strong>Software Development</strong>, 
+        I've developed a keen eye for detail and a passion for solving complex problems. 
+      </p>
+      <p class="description">
+        My diverse skill set includes <strong>UI/UX design, fullstack development, database administrator and project management</strong>. 
+        I'm also proficient in a wide range of programming languages( Java,HTML/CSS, JavaScript, Python, Kotlin) and frameworks(Springboot, Django, JavaEE, Angular, ReactJS) , giving me a solid foundation in tech. 
+        I'm excited to meet like-minded professionals and explore opportunities to collaborate and grow. Let's connect!
+      </p>
+    </div>
+
+      <div class="tack-stack">
+       <div class="about-sidebar">
+        <div class="tab-navigation">
+          <button 
+            [class.active]="activeTab === 'skills'" 
+            (click)="setActiveTab('skills')">
+            Skills
+          </button>
+          <button 
+            [class.active]="activeTab === 'experience'" 
+            (click)="setActiveTab('experience')">
+            Experience
+          </button>
+          <button 
+            [class.active]="activeTab === 'education'" 
+            (click)="setActiveTab('education')">
+            Education
+          </button>
+        </div>
+
+        <div class="tab-content">
+        <div class="tab-contents" [class.active-tab]="activeTab === 'skills'">
+        <ul class="skills-list">
+          <li *ngFor="let skill of skillsList">{{ skill }}</li>
+        </ul>
+      </div>
+
+      <div class="tab-contents" [class.active-tab]="activeTab === 'experience'">
+        <div class="placeholder-content">
+          <p class="date-highlight">2025-Current</p>
+          <p>Junior Software Development with 6 months experience, trained at Raincloud</p>
+        </div>
+      </div>
+
+      <div class="tab-contents" [class.active-tab]="activeTab === 'education'">
+        <div class="placeholder-content">
+          <p class="date-highlight">2022-2025</p>
+          <p>Final Year Dip (Computer Science) student at Tshwane University Of Technology</p>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>

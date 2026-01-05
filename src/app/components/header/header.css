@@ -1,0 +1,128 @@
+/* Core Header Styling */
+.main-header {
+    width: 100%;
+    background-color: #ffffff;
+    /* Shadow divider separating header from content */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); 
+    border-radius: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif; /* Modern font similar to image */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Purple Logo Design */
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #6d5dfc; /* Main purple from image */
+}
+
+.logo span {
+    color: #6d5dfc;
+}
+
+/* This forces the 'hand' cursor on all nav links */
+nav a, 
+[routerLink] {
+  cursor: pointer !important;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+
+/* Horizontal Nav with Underline Hover */
+.horizontal-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.horizontal-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+/* The Underline Effect matching the image */
+.horizontal-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #6d5dfc;
+    transition: width 0.3s ease;
+}
+
+.horizontal-nav a:hover {
+    color: #6d5dfc;
+}
+
+.horizontal-nav a:hover::after {
+    width: 100%;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Spacing for landing page */
+.landing-page {
+    padding: 100px 50px;
+    min-height: 100vh;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* small screens */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .horizontal-nav { 
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    background: var(--nav-bg, #fff);
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  .horizontal-nav.open { display: flex; }
+}

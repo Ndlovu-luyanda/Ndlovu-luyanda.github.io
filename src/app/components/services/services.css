@@ -1,0 +1,99 @@
+
+h2{
+color: #6d5dfc;
+font-size: 2.5rem;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 8%;
+}
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding-top: 3rem;
+  margin-bottom: 10%;
+}
+
+.service-card {
+  background: #e9e6ff;
+  background: linear-gradient(
+    to bottom,
+    rgba(109, 93, 252, 0) 0%, 
+    rgba(109, 93, 252, 0.95) 80%
+  );
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* THE HOVER EFFECT: Card lifts and glow appears */
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: #5444e6;
+  box-shadow: 0 10px 30px rgba(51, 41, 139, 0.15);
+}
+
+
+
+.icon-box {
+  font-size: 2.5rem;
+  color: #6d5dfc; /* Your primary purple */
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .icon-box {
+  transform: scale(1.1);
+  color: #e91e63; /* Accent color on hover */
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* THE DESCRIPTION HOVER: It fades in/brightens */
+.service-description {
+  font-size: 0.95rem;
+  color: #0c0c0c; /* Muted color by default */
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-description {
+  color: #ffffff; /* Turns bright white on hover */
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 8%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Dark Mode Overrides */
+:host-context(.dark-theme) .services-section {
+  background: #1e293b;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+}
+:host-context(.dark-theme) .service-section {
+  border-color: rgba(152, 141, 255, 0.2);
+}

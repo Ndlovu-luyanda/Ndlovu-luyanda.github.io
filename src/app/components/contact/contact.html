@@ -1,0 +1,38 @@
+<section id="contact" class="contact-section" appReveal>
+  <div class="contact-container">
+    <h2 class="section-title">Contact Me<span>.</span></h2>
+
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-paper-plane"></i>
+        <a href="mailto:ndlovuluyanda606@gmail.com">ndlovuluyanda606@gmail.com</a>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone-alt"></i>
+        <p>+27 64 997 3108</p>
+      </div>
+      <div class="info-item">
+        <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/luyanda-ndlovu-7a095a317" target="_blank" rel="noopener noreferrer">linkedin.com/in/luyanda-ndlovu</a>
+      </div>
+      
+      <button class="resume-btn" (click)="downloadCV()">Resume</button>
+    </div>
+
+    <form class="contact-form" #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)">
+      <div class="input-group">
+        <input name="name" type="text" placeholder="Your Name" required [(ngModel)]="form.name">
+      </div>
+      <div class="input-group">
+        <input name="email" type="email" placeholder="Your Email" required [(ngModel)]="form.email">
+      </div>
+      <div class="input-group">
+        <textarea name="message" placeholder="Your Message" rows="5" required [(ngModel)]="form.message"></textarea>
+      </div>
+      <button type="submit" class="submit-btn" [disabled]="sending">{{ sending ? 'Sending...' : 'Submit' }}</button>
+
+      <div *ngIf="success" class="success-msg">Message sent. Thank you.</div>
+      <div *ngIf="error" class="error-msg">Error sending message. Try again.</div>
+    </form>
+  </div>
+</section>

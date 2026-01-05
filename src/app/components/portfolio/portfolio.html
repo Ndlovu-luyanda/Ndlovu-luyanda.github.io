@@ -1,0 +1,39 @@
+<section id="portfolio" class="portfolio-section" appReveal>
+  <div class="container">
+  <h2 class="latest-projects-title">Latest <span>Projects.</span></h2>
+
+  <div class="portfolio-grid">
+    <div class="flipcard__main" *ngFor="let project of projects; let i = index">
+      <button 
+        class="flipcard__item" 
+        [class.is-flipped]="project.flipped"
+        (click)="project.flipped = !project.flipped"
+        [aria-label]="'Project: ' + project.title + '. Click to flip for details.'">
+        
+        <div class="flipcard__item-face flipcard__item-front">
+          
+
+          <img class="flipcard__item-frontImage" [src]="project.image" [alt]="project.title">
+          
+          <div class="purple-overlay">
+            <div class="flip-icon">Click to flip</div>
+          </div>
+        </div>
+
+        <div class="flipcard__item-face flipcard__item-back ">
+          <div class="flipcard__item-back-inner see-more-circle">
+            <div class="flipcard__item-back-title">{{ project.title }}</div>
+            <p>{{ project.description }}</p>
+            
+           
+
+            <div class="replay-icon">
+               <i class="fa-solid fa-rotate-left"></i>
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+    </div>
+  </div>
+</section>
