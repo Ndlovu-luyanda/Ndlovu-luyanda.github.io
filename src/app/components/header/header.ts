@@ -34,6 +34,14 @@ export class Header {
     this.isDarkMode.update(prev => !prev);
   }
 
+   toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+
   scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
