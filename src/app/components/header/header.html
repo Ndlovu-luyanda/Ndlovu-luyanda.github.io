@@ -2,6 +2,12 @@
     <div class="header-container">
         <div class="logo">Portfolio<span>.</span></div>
 
+         <button class="mobile-menu-btn" aria-label="Toggle menu" (click)="toggleMenu()">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
         <nav class="horizontal-nav">
         <a routerLink="/" [fragment]="''" (click)="scrollToTop()">Home</a>
         <a routerLink="/" fragment="about">About</a>
@@ -15,5 +21,18 @@
               <span>🌙</span> }
             </button>
         </nav>
+
+         <nav class="mobile-nav" [class.open]="isMenuOpen" role="menu" aria-hidden="{{!isMenuOpen}}">
+      <a routerLink="/" [fragment]="''" (click)="scrollToTop(); closeMenu()">Home</a>
+      <a routerLink="/" fragment="about" (click)="closeMenu()">About</a>
+      <a routerLink="/" fragment="services" (click)="closeMenu()">Services</a>
+      <a routerLink="/" fragment="portfolio" (click)="closeMenu()">Portfolio</a>
+      <a routerLink="/" fragment="contact" (click)="closeMenu()">Contact</a>
+
+      <button (click)="toggleTheme(); closeMenu()" class="theme-btn">
+        <span *ngIf="isDarkMode(); else moon2">☀️</span>
+        <ng-template #moon2>🌙</ng-template>
+      </button>
+    </nav>
     </div>
 </header>
