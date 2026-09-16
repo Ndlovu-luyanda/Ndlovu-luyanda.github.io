@@ -29,7 +29,7 @@ export class Portfolio {
       flipped: false
     },
      {
-      title: 'Teleclinic Platform',
+      title: 'MobiClinic Platform',
       description: 'Developed a health-tech platform bridging healthcare gaps for urban and rural communities through a unified digital ecosystem. I implemented real-time health monitoring dashboards, an AI assistant, '
       +' and secure provider search to ensure accessible, high-quality medical care for all users.',
       image: '/projects/teleclinic.png',

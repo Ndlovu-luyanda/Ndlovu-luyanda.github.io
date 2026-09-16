@@ -12,7 +12,7 @@ export class About {
   activeTab: string = 'skills';
 
   skillsList: string[] = [
-    'UI/UX Design','Full-stack Development', 'Database Administrator', 'Project Management' // Other key skills
+    'UI/UX Design','Full-stack Development', 'Database Administrator', 'Project Management', 'System Analysis', 'Software Testing' // Other key skills
   ];
 
   setActiveTab(tabName: string): void {
